@@ -48,7 +48,7 @@ h2::selection {
 /* Button hover effects */
 .btn-primary:hover {
   background: var(--secondary-color);
-  box-shadow: 0 10px 0 #d4a800;
+  box-shadow: 0 10px 0 #000000;
   top: -4px;
 }
 
@@ -56,7 +56,7 @@ h2::selection {
   background: var(--primary-color);
   color: #000000;
   border-color: var(--primary-color);
-  box-shadow: 0 10px 0 #d4a800;
+  box-shadow: 0 10px 0 #000000;
   top: -4px;
 }
 

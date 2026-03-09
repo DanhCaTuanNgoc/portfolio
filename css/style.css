@@ -101,6 +101,33 @@ body {
   margin: 0 1rem;
   font-size: 0.8rem;
   font-weight: var(--weight-semibold);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:not(.btn) {
+  padding: 0.5rem 0;
+}
+
+.navbar .nav-link:not(.btn)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:not(.btn):hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.navbar .nav-link:not(.btn):hover::after {
+  width: 100%;
+  height: 2px;
 }
 
 .navbar #logo img {
