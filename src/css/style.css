@@ -208,6 +208,109 @@ body {
   left: 10px;
 }
 
+/* About Me Section */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 5rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.about-text h3:first-child {
+  margin-top: 0;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-list i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Personal Information */
+.personal-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--card-background);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  min-width: 30px;
+  text-align: center;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: var(--weight-semibold);
+}
+
+.info-value {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: var(--weight-small);
+}
+
 /* Footer */
 #footer {
   background: #111111;
@@ -259,6 +362,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .personal-info {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 670px) {
