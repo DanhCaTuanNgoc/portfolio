@@ -144,6 +144,8 @@ body {
   width: 150px;
   border-radius: 50%;
   animation: bounce 1s infinite alternate;
+  background: #ffd35c;
+  padding: 0px;
 }
 
 @keyframes bounce {
