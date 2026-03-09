@@ -81,7 +81,7 @@ body::after {
   position: fixed;
   border-radius: 15px;
   z-index: -1;
-  opacity: 0.18;
+  opacity: 0.68;
   animation: float 20s ease-in-out infinite;
 }
 
@@ -118,7 +118,7 @@ body::after {
 
 .shape {
   position: absolute;
-  opacity: 0.25;
+  opacity: 0.65;
   animation: float 15s ease-in-out infinite;
 }
 
@@ -234,7 +234,7 @@ body::after {
 .navbar .nav-link {
   margin: 0 1rem;
   font-size: 0.8rem;
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-bold);
   position: relative;
   transition: all 0.3s ease;
 }
