@@ -45,17 +45,30 @@ h2::selection {
   box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
 }
 
+.btn-white {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 6px 0 #000000;
+}
+
 /* Button hover effects */
 .btn-primary:hover {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   box-shadow: 0 10px 0 #000000;
   top: -4px;
 }
 
 .btn-secondary:hover {
   background: var(--primary-color);
-  color: #000000;
+  color: #ffffff;
   border-color: var(--primary-color);
+  box-shadow: 0 10px 0 #000000;
+  top: -4px;
+}
+
+.btn-white:hover {
+  background: #f0f0f0;
+  color: var(--primary-color);
   box-shadow: 0 10px 0 #000000;
   top: -4px;
 }
@@ -105,12 +118,21 @@ h2::selection {
 }
 
 .header-container > div {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .content-text {
   text-align: center;
   margin: 1.5rem 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
 .content-text h2 {
