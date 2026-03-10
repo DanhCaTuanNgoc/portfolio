@@ -9,8 +9,8 @@
 /* variables */
 :root {
   /* Colors */
-  --primary-color: #ffcd42;
-  --secondary-color: #ffd35c;
+  --primary-color: #0066FF;
+  --secondary-color: #3399FF;
   --bg-primary: #ffffff;
   --text-color: #222222;
   --text-color-two: #ffffff;
@@ -32,8 +32,8 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: #ffcd42;
-  --secondary-color: #ffd35c;
+  --primary-color: #0066FF;
+  --secondary-color: #3399FF;
   --bg-primary: #000000;
   --text-color: #ffffff;
   --text-color-two: #222222;
@@ -305,7 +305,7 @@ body::after {
   width: 150px;
   border-radius: 50%;
   animation: bounce 1s infinite alternate;
-  background: #ffd35c;
+  background: #3399FF;
   padding: 0px;
 }
 
