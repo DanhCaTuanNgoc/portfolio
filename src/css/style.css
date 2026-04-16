@@ -271,6 +271,7 @@ body::after {
 
 .navbar .btn {
   margin-right: 1.5rem;
+  cursor: pointer;
 }
 
 .fas.fa-arrow-right {
@@ -324,6 +325,35 @@ body::after {
   height: 2px;
   background-color: var(--card-background);
   margin: 5.5rem 0;
+}
+
+/* White text panels for selected content lines */
+.text-focus-panel {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0.9rem;
+}
+
+.text-focus-inline {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.05);
+  padding: 0.32rem 0.6rem;
+}
+
+.about-intro-panel {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 /* Projects */
 #projects {
