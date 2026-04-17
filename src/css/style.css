@@ -355,6 +355,16 @@ body::after {
   margin-bottom: 2rem;
   line-height: 1.6;
 }
+
+.content-white-card {
+  background: #ffffff;
+  border: 1px solid #dbe1ed;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(17, 25, 40, 0.06);
+  display: flex;
+  gap: 1.2rem;
+  padding: 20px;
+}
 /* Projects */
 #projects {
   display: flex;
@@ -515,11 +525,21 @@ body::after {
 .summary-card {
   display: flex;
   gap: 1.2rem;
-  padding: 30px;
+  padding: 20px;
   background: #f8f9fb;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card .summary-content {
+  flex: 1;
+}
+
+.summary-card .summary-content.content-white-card,
+.offer-card .offer-content.content-white-card {
+  display: block;
+  padding: 0.85rem 1rem;
 }
 
 .summary-icon {
@@ -747,6 +767,10 @@ body::after {
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.offer-card .offer-content {
+  flex: 1;
 }
 
 .offer-number {
