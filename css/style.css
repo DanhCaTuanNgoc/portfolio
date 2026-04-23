@@ -352,7 +352,6 @@ body::after {
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   padding: 1.2rem 1.3rem;
-  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
@@ -362,6 +361,7 @@ body::after {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(17, 25, 40, 0.06);
   display: flex;
+  flex-direction: column;
   gap: 1.2rem;
   padding: 20px;
 }
@@ -438,7 +438,6 @@ body::after {
 .about-text p {
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
   color: var(--text-color);
 }
 
@@ -474,11 +473,23 @@ body::after {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 30px;
+  padding: 10px;
   background: #f8f9fb;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-content {
+    display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .info-item i {
@@ -520,12 +531,13 @@ body::after {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .summary-card {
   display: flex;
   gap: 1.2rem;
-  padding: 20px;
+  padding: 10px;
   background: #f8f9fb;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
@@ -537,10 +549,6 @@ body::after {
 }
 
 .summary-card .summary-content.content-white-card,
-.offer-card .offer-content.content-white-card {
-  display: block;
-  padding: 0.85rem 1rem;
-}
 
 .summary-icon {
   min-width: 50px;
@@ -704,8 +712,17 @@ body::after {
 }
 
 .cert-card {
-  padding: 30px;
+  padding: 16px;
   background: #f8f9fb;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.cert-content{
+  padding: 30px;
+  background: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -762,8 +779,19 @@ body::after {
 .offer-card {
   display: flex;
   gap: 1.5rem;
-  padding: 30px;
+  padding: 12px;
   background: #f8f9fb;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.offer-background {
+  display: flex;
+  gap: 1.5rem;
+  padding: 16px;
+  padding-top: 24px;
+  background: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
