@@ -1,0 +1,23 @@
+/* Car Booking case study overrides (scoped to this page only) */
+
+.carbooking-case .gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 460px));
+}
+
+.carbooking-case .gallery-item img {
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  object-fit: cover;
+}
+
+@media (max-width: 1080px) {
+  .carbooking-case .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
+}
+
+@media (max-width: 768px) {
+  .carbooking-case .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
