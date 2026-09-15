@@ -15,31 +15,31 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     '========================================================
     ' 2. KẾT NỐI TỚI CÁC SHEET DỮ LIỆU
     '========================================================
-    Dim wsUser As Worksheet, wsKho As Worksheet, wsRole As Worksheet
+    Dim wsUser As Worksheet, wsDoi As Worksheet, wsRole As Worksheet
     On Error Resume Next
     Set wsUser = ThisWorkbook.Worksheets("User List")
-    Set wsKho = ThisWorkbook.Worksheets("Danh sách kho")
+    Set wsDoi = ThisWorkbook.Worksheets("Sale team list")
     Set wsRole = ThisWorkbook.Worksheets("Role Mapping")
     On Error GoTo ErrorHandler
     
-    If wsUser Is Nothing Or wsKho Is Nothing Or wsRole Is Nothing Then
-        MsgBox "Không tìm thấy một trong các sheet dữ liệu (User List, Danh sách kho, Role Mapping). Vui lòng kiểm tra lại tên sheet!", vbCritical, "Lỗi kết nối Sheet"
+    If wsUser Is Nothing Or wsDoi Is Nothing Or wsRole Is Nothing Then
+        MsgBox "Khong tim thay mot trong cac sheet du lieu (User List, Sale team list, Role Mapping). Kiem tra dung ten sheet!", vbCritical, "Loi ket noi Sheet"
         GoTo CleanUp
     End If
     
-    Dim lastRowKho As Long, lastRowRole As Long
-    lastRowKho = wsKho.Cells(wsKho.Rows.Count, "C").End(xlUp).Row
-    If lastRowKho < 2 Then lastRowKho = wsKho.Cells(wsKho.Rows.Count, "B").End(xlUp).Row
+    Dim lastRowDoi As Long, lastRowRole As Long
+    lastRowDoi = wsDoi.Cells(wsDoi.Rows.Count, "C").End(xlUp).Row
+    If lastRowDoi < 2 Then lastRowDoi = wsDoi.Cells(wsDoi.Rows.Count, "B").End(xlUp).Row
     lastRowRole = wsRole.Cells(wsRole.Rows.Count, "A").End(xlUp).Row
     
-    ' Load dữ liệu Danh sách kho vào mảng để tối ưu tốc độ và chuẩn hóa
-    Dim arrKho() As Variant, arrKhoNorm() As String
-    If lastRowKho >= 2 Then
-        arrKho = wsKho.Range("A2:G" & lastRowKho).Value
-        ReDim arrKhoNorm(1 To UBound(arrKho, 1))
+    ' Load dữ liệu Danh sách đội: dò tên đội ở C, lấy mã đội ở B và mã kho ở D
+    Dim arrDoi() As Variant, arrDoiNorm() As String
+    If lastRowDoi >= 2 Then
+        arrDoi = wsDoi.Range("A2:D" & lastRowDoi).Value
+        ReDim arrDoiNorm(1 To UBound(arrDoi, 1))
         Dim k As Long
-        For k = 1 To UBound(arrKho, 1)
-            arrKhoNorm(k) = ChuanHoaTenDoi(arrKho(k, 3)) ' Cột C: Mô tả tên đội
+        For k = 1 To UBound(arrDoi, 1)
+            arrDoiNorm(k) = ChuanHoaTenDoi(arrDoi(k, 3)) ' Cột C: Tên đội
         Next k
     End If
     
@@ -144,7 +144,7 @@ Private Sub Worksheet_Change(ByVal Target As Range)
         resMaDoi = ""
         resMaKho = ""
         
-        If salesTeam <> "" And (Not Not arrKhoNorm) Then
+        If salesTeam <> "" And (Not Not arrDoiNorm) Then
             ' Tách nhiều đội nếu có (hỗ trợ dấu phẩy, dấu chấm phẩy, xuống dòng)
             Dim cleanTeamInput As String
             cleanTeamInput = Replace(salesTeam, vbCrLf, ",")
@@ -162,12 +162,12 @@ Private Sub Worksheet_Change(ByVal Target As Range)
                     searchStr = ChuanHoaTenDoi(itemTeam)
                     foundKho = False
                     
-                    For r = 1 To UBound(arrKhoNorm)
-                        dbStr = arrKhoNorm(r)
+                    For r = 1 To UBound(arrDoiNorm)
+                        dbStr = arrDoiNorm(r)
                         If dbStr <> "" And dbStr = searchStr Then
                             Dim strMaDoi As String, strMaKho As String
-                            strMaDoi = Trim(CStr(arrKho(r, 7))) ' Cột G: Mã đội bán hàng
-                            strMaKho = Trim(CStr(arrKho(r, 5))) ' Cột E: Mã kho
+                            strMaDoi = Trim(CStr(arrDoi(r, 2))) ' Cột B: Mã đội
+                            strMaKho = Trim(CStr(arrDoi(r, 4))) ' Cột D: Mã kho
                             
                             If strMaDoi = "" Then strMaDoi = "Null"
                             If strMaKho = "" Then strMaKho = "Null"
